@@ -4,11 +4,11 @@ import csv
 
 def get_folders(folder, maximum_size):
     '''gets the folders that exceed a selected size 
-       and prints it in the console and in a txt file'''
+       and prints it in the console and in a csv file'''
     
-    #creates the txt file for the data
-    with open(f'{os.path.dirname(__file__)}\\data.txt', 'w') as txt_file:
-        data = txt_file.read()
+    #creates the csv file for the data
+    with open(f'{os.path.dirname(__file__)}\\data.csv', 'w') as csv_file:
+        data = csv.writer(csv_file)
         #look for all the folders and files in the selected folder
         for root, dirs, files in os.walk(folder):
             folder_size = 0
